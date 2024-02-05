@@ -47,7 +47,7 @@ namespace nts
         protected:
         private:
     };
-    
+
 }
 
 #endif /* !ELEMCOMP_HPP_ */

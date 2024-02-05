@@ -15,6 +15,7 @@ namespace nts
     class InputComponent : public AComponent {
         public:
             ~InputComponent() = default;
+            nts::Tristate compute(std::size_t pin) override;
 
         protected:
         private:
@@ -23,6 +24,7 @@ namespace nts
     class OutputComponent : public AComponent {
         public:
             ~OutputComponent() = default;
+            nts::Tristate compute(std::size_t pin) override;
 
         protected:
         private:
@@ -31,6 +33,7 @@ namespace nts
     class TrueComponent : public AComponent {
         public:
             ~TrueComponent() = default;
+            nts::Tristate compute(std::size_t pin) override;
 
         protected:
         private:
@@ -39,7 +42,8 @@ namespace nts
     class FalseComponent : public AComponent {
         public:
             ~FalseComponent() = default;
-            
+            nts::Tristate compute(std::size_t pin) override;
+
         protected:
         private:
     };

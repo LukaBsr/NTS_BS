@@ -9,6 +9,7 @@
     #define ACOMPONENT_HPP_
 
 #include "IComponent.hpp"
+#include <map>
 
 namespace nts {
     class AComponent : public IComponent {
@@ -16,17 +17,15 @@ namespace nts {
             virtual ~AComponent() = default;
 
             void setLink(std::size_t pin, nts::IComponent &other, std::size_t otherPin) override;
-            void getLink(std::size_t pin) const;
+            nts::Tristate getLink(std::size_t pin) const;
+            virtual void simulate(std::size_t tick) {};
 
         protected:
+            Tristate _value;
+            std::map<std::size_t, std::pair<nts::IComponent *, std::size_t>> _links;
+
         private:
     };
 };
-
-std::ostream &operator<<(std::ostream &os, nts::Tristate const &value)
-{
-    os << value;
-    return os;
-}
 
 #endif /* !ACOMPONENT_HPP_ */
