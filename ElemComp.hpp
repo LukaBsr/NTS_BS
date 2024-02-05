@@ -15,6 +15,7 @@ namespace nts
     class AndComponent : public AComponent {
         public:
             ~AndComponent() = default;
+            nts::Tristate compute(std::size_t pin);
 
         protected:
         private:
@@ -23,6 +24,7 @@ namespace nts
     class OrComponent : public AComponent {
         public:
             ~OrComponent() = default;
+            nts::Tristate compute(std::size_t pin);
 
         protected:
         private:
@@ -31,6 +33,7 @@ namespace nts
     class XorComponent : public AComponent {
         public:
             ~XorComponent() = default;
+            nts::Tristate compute(std::size_t pin);
 
         protected:
         private:
@@ -39,6 +42,7 @@ namespace nts
     class NotComponent : public AComponent {
         public:
             ~NotComponent() = default;
+            nts::Tristate compute(std::size_t pin);
 
         protected:
         private:
